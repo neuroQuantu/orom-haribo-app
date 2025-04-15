@@ -2,7 +2,6 @@
 
 Bienvenue dans le portail vocal intelligent HARIBO IIA, conçu pour une interaction avancée avec Ibrahim Sakarya.
 
-## Démo en ligne
 
 Accès à l’application : [orom-haribo-app.vercel.app](https://orom-haribo-app.vercel.app)
 
