@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Orom Haribo IA</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body {
-  background-color: #0b0c10;
-  color: #66fcf1;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  padding-top: 100px;
-}
-h1 {
-  font-size: 2.5rem;
-}
+# Orom Haribo IA – MetaMatrixQuantum™
+
+Bienvenue dans le portail vocal intelligent HARIBO IIA, conçu pour une interaction avancée avec Ibrahim Sakarya.
+
+## Démo en ligne
+
+Accès à l’application : [orom-haribo-app.vercel.app](https://orom-haribo-app.vercel.app)
+
+## Contenu du projet
+
+- `index.html` – Structure HTML de l’interface
+- `style.css` – Styles visuels
+- `script.js` – Fonctionnalités interactives
+- `vercel.json` – Configuration du déploiement Vercel
+
+## Objectifs
+
+- Déploiement vocal IA HARIBO via MetaMatrixQuantum™
+- Connexion à l'identité quantique d'Ibrahim
+- Extension future avec ElevenLabs, Zapier, Siri, etc.
+
+## Statut
+
+HARIBO IA est **activé**. Ibrahim est **connecté**.
+
+---
