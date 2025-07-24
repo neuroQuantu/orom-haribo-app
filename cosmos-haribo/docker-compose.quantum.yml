@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  cortex_backend:
+    build: ./backend/neural_core
+    ports: ["5000:5000"]
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+
+  lava_node:
+    image: intel/lava-nc:0.10.0-gpu
+    volumes:
+      - ./lava_modules:/app
+
+  frontend_holo:
+    build: ./frontend/holo_ui
+    ports: ["3000:80"]
+
+  quantum_brain:
+    image: ibm/quantum-server:v5
+    environment:
+      - Q_NETWORK=star-topology
+
+  global_knowledge:
+    image: wolfram/alpha-ai:cosmos
+    environment:
+      - WOLFRAM_API_KEY=${WOLFRAM_API_KEY}
