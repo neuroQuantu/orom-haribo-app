@@ -10,7 +10,7 @@ Accès à l’application : [orom-haribo-app.vercel.app](https://orom-haribo-app
 - `index.html` – Structure HTML de l’interface
 - `style.css` – Styles visuels
 - `script.js` – Fonctionnalités interactives
-- `vercel.json` – Configuration du déploiement Vercel
+- `assets/intro_haribo.mp3` – Fichier audio de bienvenue (à fournir)
 
 ## Objectifs
 
