@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SifernMediaCreator version="2.1" dateDeCreation="2025-08-07">
+  <Meta>
+    <Version>2.1</Version>
+    <Auteur>Ibrahim Sakarya</Auteur>
+    <DerniereModification>2025-08-07T14:30:00+02:00</DerniereModification>
+    <Description>Système intégré de création de contenu médical esthétique</Description>
+  </Meta>
+
+  <Marque>
+    <Identite>
+      <Nom officiel="Clinique d'Esthétique SIFERN"/>
+      <Slogan>La science au service de votre beauté</Slogan>
+      <Fondateur>Ibrahim Sakarya</Fondateur>
+      <AnneeCreation>2021</AnneeCreation>
+      <Coordonnees>
+        <Adresse>Rue des Cliniques 42, 1000 Bruxelles</Adresse>
+        <Telephone>+32 2 123 45 67</Telephone>
+        <Email>contact@sifern.be</Email>
+      </Coordonnees>
+    </Identite>
+    <IdentiteVisuelle>
+      <PaletteCouleurs>
+        <Primaire hex="#EAB1D2" pantone="2315C">Rose Sifern</Primaire>
+        <Secondaire hex="#FFFFFF">Blanc pur</Secondaire>
+        <Accent hex="#222222">Noir profond</Accent>
+      </PaletteCouleurs>
+      <Typographie>
+        <PolicePrincipale nom="Montserrat" usage="Textes"/>
+        <PoliceSecondaire nom="Playfair Display" usage="Titres"/>
+      </Typographie>
+    </IdentiteVisuelle>
+    <ReseauxSociaux>
+      <Plateforme nom="Instagram" handle="@sifern.be" abonnes="12400"/>
+      <Plateforme nom="Facebook" handle="CliniqueSifern" abonnes="8900"/>
+      <Plateforme nom="TikTok" handle="@sifern.beauty" abonnes="5600"/>
+    </ReseauxSociaux>
+  </Marque>
+
+  <StrategieContenu>
+    <Objectifs>
+      <Objectif type="Visibilite">Augmenter la notoriété de 30% en 6 mois</Objectif>
+      <Objectif type="Conversion">Générer 15 consultations/mois via Instagram</Objectif>
+      <Objectif type="Engagement">Taux d'interaction moyen de 5%</Objectif>
+    </Objectifs>
+    <Cibles>
+      <Cible principale="Femmes 30-55 ans" preoccupations="anti-âge, soins capillaires"/>
+      <Cible secondaire="Femmes 25-35 ans" preoccupations="prévention"/>
+    </Cibles>
+  </StrategieContenu>
+
+  <Contenus>
+    <Publications>
+      <Post id="P001" type="ImageCarousel" date="2025-08-10">
+        <Titre principal="La magie du Microneedling"/>
+        <Description>Notre protocole microneedling + vitamines</Description>
+      </Post>
+      <Reel id="P002" date="2025-08-12">
+        <Concept>Transformation capillaire LED + Exosomes</Concept>
+      </Reel>
+    </Publications>
+    <Campagnes>
+      <Campagne id="C001" nom="Rentrée 2025" periode="2025-09-01/2025-10-15" budget="1500€"/>
+    </Campagnes>
+  </Contenus>
+
+  <Templates>
+    <Template id="T001" type="Image" nom="Template Soins Visage"/>
+    <Template id="T002" type="Video" nom="Template Reel Transformation"/>
+    <Automatisation>
+      <Workflow id="W001" nom="Publication Réseaux Sociaux"/>
+    </Automatisation>
+  </Templates>
+
+  <SystemeIA>
+    <ConfigurationIA nom="HARIBO_IA" version="2.3"/>
+    <Equipe>
+      <Membre role="Responsable contenu" nom="À recruter"/>
+      <Membre role="Assistant IA" nom="À recruter"/>
+    </Equipe>
+  </SystemeIA>
+
+  <AutomatisationIntegree>
+    <Orchestrateur>
+      <Plateforme>Make.com</Plateforme>
+    </Orchestrateur>
+    <Workflows>
+      <Workflow id="WF-VISUELS"/>
+      <Workflow id="WF-PUBLICATION"/>
+      <Workflow id="WF-ENGAGEMENT"/>
+    </Workflows>
+    <ConnecteursSpeciaux>
+      <Connecteur type="Design" outil="Canva Enterprise"/>
+      <Connecteur type="CRM" outil="HubSpot"/>
+    </ConnecteursSpeciaux>
+  </AutomatisationIntegree>
+
+  <Commandes>
+    <Vocale plateforme="iOS" commande="Hey Siri, publie promo Sifern"/>
+    <Raccourci nom="Générer visuel rapide"/>
+  </Commandes>
+
+  <Performance>
+    <Indicateur nom="Taux engagement" cible="≥5%"/>
+    <Indicateur nom="Taux conversion" cible="3%"/>
+    <Indicateur nom="Croissance abonnés" cible="+7%/mois"/>
+  </Performance>
+</SifernMediaCreator>
