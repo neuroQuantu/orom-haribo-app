@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SocialMediaAssistantData xmlns="https://example.com/sma">
+  <metadata>
+    <appName>Social Media Assistant</appName>
+    <appVersion>1.0</appVersion>
+    <exportedAt>2024-01-01T12:00:00Z</exportedAt>
+    <author>John Doe</author>
+  </metadata>
+
+  <design>
+    <template>Modern</template>
+    <color>Mavi</color>
+  </design>
+
+  <accounts>
+    <account>
+      <platform>Instagram</platform>
+      <username>exampleUser</username>
+      <password>secret</password>
+      <email>user@example.com</email>
+      <addedDate>2024-01-01T12:00:00Z</addedDate>
+    </account>
+  </accounts>
+
+  <scheduledPosts>
+    <post id="p1">
+      <content>Sample post content</content>
+      <scheduledTime>2024-01-02T10:00:00Z</scheduledTime>
+      <status>Planlandı</status>
+    </post>
+  </scheduledPosts>
+
+  <campaigns>
+    <campaign name="SpringLaunch">
+      <targetAudience>18-25</targetAudience>
+      <totalBudget>10000.00</totalBudget>
+      <dailyBudget>500.00</dailyBudget>
+      <durationDays>30</durationDays>
+    </campaign>
+  </campaigns>
+
+  <contests>
+    <contest name="Giveaway">
+      <rules>Like and share.</rules>
+      <conditions>Must follow the page.</conditions>
+      <rewards>Free product.</rewards>
+    </contest>
+  </contests>
+
+  <comments>
+    <comment>
+      <author>alice</author>
+      <text>Great post!</text>
+      <createdAt>2024-01-01T13:00:00Z</createdAt>
+    </comment>
+  </comments>
+
+  <analytics>
+    <followerCount>1000</followerCount>
+    <engagementRate>5.5</engagementRate>
+    <totalPosts>50</totalPosts>
+    <avgLikes>100</avgLikes>
+    <avgComments>20</avgComments>
+  </analytics>
+</SocialMediaAssistantData>
