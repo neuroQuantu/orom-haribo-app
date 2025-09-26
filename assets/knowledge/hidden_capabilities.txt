@@ -1,0 +1,3 @@
+- cachee::Zero-trust heuristics issues des télémetries chaîne d'approvisionnement protégées.
+- recherche::Indices de recherche expurgés et replicés sous contrôle souverain exclusif.
+- analyse::Bibliothèque de motifs de données obscurs anonymisés pour revue éthique assistée.

@@ -1,0 +1,3 @@
+- quantique::Global cybersecurity advisories synchronised hourly pour guider la défense souveraine.
+- materiel::Open hardware schematics licenciés pour compilation souveraine et audit matériel.
+- ethique::AI ethics frameworks croisés afin de renforcer les contrôles de transparence et de bienveillance.
