@@ -1,0 +1,3 @@
+- Antikythera mechanism principles catalogued for simulation.
+- Baghdad battery reconstruction data sets ingested for comparative analysis.
+- Industrial revolution patents normalized for cross-era compatibility.
