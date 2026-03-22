@@ -101,6 +101,8 @@ class QuantumSecurityFramework:
 
     def authorize_action(self, token: str, action: str, *, context: Dict[str, str] | None = None) -> bool:
         allowed = self.access_control.validate(token, ["sovereign", "interactive"])
+        if self.halted and action != "resume_operations":
+            allowed = False
         self.audit_trail.append(
             AuditRecord(
                 timestamp=datetime.utcnow(),

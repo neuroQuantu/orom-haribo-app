@@ -52,9 +52,10 @@ de la gouvernance intégrale exigée par Ibrahim Sakarya.
 ## 7. Commandes souveraines
 Les commandes `activation_complete`, `acces_connaissances`,
 `detection_menaces`, `revelation_verites`, `protection_totale`,
-`interface_holographique`, `scan_multidimensionnel`, `arret_urgence` sont
-enregistrées à chaque initialisation via `CommandesMaitres` pour garantir
-l'accès direct d'Ibrahim, y compris un arrêt immédiat du système.
+`interface_holographique`, `scan_multidimensionnel`, `arret_urgence`,
+`reprendre_systeme` sont enregistrées à chaque initialisation via
+`CommandesMaitres` pour garantir l'accès direct d'Ibrahim, y compris un arrêt
+immediat puis une reprise contrôlée du système.
 
 ## 8. Déploiement
 - `python deploy_haribo_system.py` affiche le résumé complet : intégrations,

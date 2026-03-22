@@ -71,7 +71,11 @@ class HariboQuantumSystem:
             repo_root / "configs" / "haribo_codex.json"
         )
         self.detector = DetecteurMultidimensionnel(config.dimensions)
-        self.commandes = CommandesMaitres(config.system.owner)
+        self.commandes = CommandesMaitres(
+            config.system.owner,
+            stop_handler=lambda: self.security.emergency_shutdown("operator_stop"),
+            resume_handler=self.security.resume_operations,
+        )
         self.integrateur_universel = IntegrateurUniversel()
         self.reseau = ReseauUniverselHaribo(config.system.owner)
         self.noyau = NoyauQuantiqueUniversel(config.system.owner, config.dimensions)
@@ -134,9 +138,8 @@ class HariboQuantumSystem:
         self.commandes.register(
             "scan_multidimensionnel", lambda matrix=presence_matrix: matrix
         )
-        self.commandes.register(
-            "arret_urgence", lambda: self.security.emergency_shutdown("operator_stop")
-        )
+        self.commandes.register("arret_urgence", self.commandes.stop_systeme)
+        self.commandes.register("reprendre_systeme", self.commandes.reprendre_systeme)
         architecture_overlay = {
             "core_layers": {
                 "consciousness_interface": self.core_manifest.consciousness_interface,

@@ -4,7 +4,7 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Callable, Dict, Iterable, List, Mapping, MutableMapping, Sequence
+from typing import Callable, Dict, Iterable, List, Mapping, MutableMapping, Optional, Sequence
 import json
 
 from .integration import IntegrationStatus
@@ -531,8 +531,15 @@ class IntegrateurUniversel:
 class CommandesMaitres:
     """Registry of sovereign commands."""
 
-    def __init__(self, owner: str) -> None:
+    def __init__(
+        self,
+        owner: str,
+        stop_handler: Optional[Callable[[], Dict[str, str]]] = None,
+        resume_handler: Optional[Callable[[], Dict[str, str]]] = None,
+    ) -> None:
         self.owner = owner
+        self.stop_handler = stop_handler
+        self.resume_handler = resume_handler
         self.commandes_souveraines: Dict[str, Callable[[], object]] = {}
 
     def register(self, commande: str, handler: Callable[[], object]) -> None:
@@ -552,11 +559,18 @@ class CommandesMaitres:
         }
 
     def stop_systeme(self) -> Dict[str, str]:
+        if self.stop_handler is not None:
+            return self.stop_handler()
         return {
             "statut": "systeme_stoppe",
             "proprietaire": self.owner,
             "message": "Arrêt d'urgence déclenché",
         }
+
+    def reprendre_systeme(self) -> Dict[str, str]:
+        if self.resume_handler is not None:
+            return self.resume_handler()
+        return {"status": "running"}
 
 
 class ReseauUniverselHaribo:
