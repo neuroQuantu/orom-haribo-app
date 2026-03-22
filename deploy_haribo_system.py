@@ -14,6 +14,7 @@ def main() -> None:
     print("=== HARIBO OROM Quantum Ethique ===")
     print(f"Propriétaire: {state.owner}")
     print(f"Synthèse des connaissances: {state.knowledge_summary}")
+    print(f"Statut du cycle de vie: {state.lifecycle_status}")
     print("Intégrations synchronisées:")
     for target, detail in state.integrations.items():
         print(f"- {target}: {detail}")

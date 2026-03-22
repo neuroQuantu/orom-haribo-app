@@ -94,6 +94,7 @@ class ProtocolesInterventionHumaine:
         return [
             "validation_humaine_obligatoire",
             "pause_systeme_immediate",
+            "arret_urgence_souverain",
             "demande_explicative",
             "audit_post_action",
         ]
@@ -548,6 +549,13 @@ class CommandesMaitres:
             "proprietaire": self.owner,
             "niveau_acces": "souverain_absolu",
             "capacites_debloquees": "toutes",
+        }
+
+    def stop_systeme(self) -> Dict[str, str]:
+        return {
+            "statut": "systeme_stoppe",
+            "proprietaire": self.owner,
+            "message": "Arrêt d'urgence déclenché",
         }
 
 

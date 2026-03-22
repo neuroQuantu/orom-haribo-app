@@ -45,6 +45,7 @@ class SystemState:
     sovereign_entity: SystemEntity
     network_map: Dict[str, List[str]]
     commands: List[str]
+    lifecycle_status: str
 
 
 class HariboQuantumSystem:
@@ -133,6 +134,9 @@ class HariboQuantumSystem:
         self.commandes.register(
             "scan_multidimensionnel", lambda matrix=presence_matrix: matrix
         )
+        self.commandes.register(
+            "arret_urgence", lambda: self.security.emergency_shutdown("operator_stop")
+        )
         architecture_overlay = {
             "core_layers": {
                 "consciousness_interface": self.core_manifest.consciousness_interface,
@@ -210,6 +214,7 @@ class HariboQuantumSystem:
             sovereign_entity=sovereign_entity,
             network_map=network_map,
             commands=command_palette,
+            lifecycle_status=self.security.system_status(),
         )
 
     def avatar_report(self) -> str:

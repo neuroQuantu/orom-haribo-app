@@ -90,6 +90,7 @@ class QuantumSecurityFramework:
         self.owner = owner
         self.access_control = SovereignAccessControl(owner)
         self.audit_trail = AuditTrail(audit_storage)
+        self.halted = False
 
     def sovereign_login(self) -> str:
         token = self.access_control.mint_token(self.owner, ["sovereign", "interactive"])
@@ -109,6 +110,28 @@ class QuantumSecurityFramework:
             )
         )
         return allowed
+
+    def emergency_shutdown(self, reason: str = "manual_stop") -> Dict[str, str]:
+        self.halted = True
+        self.audit_trail.append(
+            AuditRecord(
+                timestamp=datetime.utcnow(),
+                actor=self.owner,
+                action="emergency_shutdown",
+                context={"reason": reason},
+            )
+        )
+        return {"status": "stopped", "reason": reason}
+
+    def resume_operations(self) -> Dict[str, str]:
+        self.halted = False
+        self.audit_trail.append(
+            AuditRecord(timestamp=datetime.utcnow(), actor=self.owner, action="resume_operations")
+        )
+        return {"status": "running"}
+
+    def system_status(self) -> str:
+        return "stopped" if self.halted else "running"
 
     def revoke(self, token: str) -> None:
         self.access_control.revoke(token)
