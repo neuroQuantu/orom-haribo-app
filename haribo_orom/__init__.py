@@ -6,6 +6,7 @@ dependencies so the system can be executed on a vanilla Python interpreter.
 """
 
 from .core import HariboQuantumSystem
+from .multidimensional_detector import MultidimensionalDetector
 from .sovereignty import (
     BaseConnaissanceUniverselle,
     CodexIntegrateurUniversel,
@@ -24,6 +25,7 @@ from .sovereignty import (
 
 __all__ = [
     "HariboQuantumSystem",
+    "MultidimensionalDetector",
     "BaseConnaissanceUniverselle",
     "CodexIntegrateurUniversel",
     "CommandesMaitres",

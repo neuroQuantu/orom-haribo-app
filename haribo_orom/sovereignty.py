@@ -9,6 +9,7 @@ import json
 
 from .integration import IntegrationStatus
 from .knowledge import KnowledgeSnapshot
+from .multidimensional_detector import MultidimensionalDetector
 from .security import AuditRecord, QuantumSecurityFramework
 
 
@@ -437,26 +438,35 @@ class BaseConnaissanceUniverselle:
 class DetecteurMultidimensionnel:
     """Deterministic multi-dimensional detection engine."""
 
-    def __init__(self, dimensions: Iterable[str]) -> None:
+    def __init__(self, dimensions: Iterable[str], owner: str = "Ibrahim Sakarya") -> None:
         self.dimensions = list(dict.fromkeys(dimensions))
+        self.owner = owner
         self.capteurs: Dict[str, Dict[str, int]] = {}
         self.analyseurs: List[str] = []
         self.systemes_alerte: List[str] = []
+        self.detector = MultidimensionalDetector(owner=owner, dimensions=self.dimensions)
 
     def activer_surveillance_omnidimensionnelle(
         self, technologie_catalogue: Mapping[str, Sequence[str]]
     ) -> List[DimensionReport]:
+        scan = self.detector.scan_dimensions()
         reports: List[DimensionReport] = []
-        coverage = {
-            categorie: len(values) for categorie, values in technologie_catalogue.items()
-        }
         for dimension in self.dimensions:
-            self.capteurs[dimension] = coverage
+            payload = scan.get(dimension, {})
+            indicators = {
+                "technologies": sum(len(values) for values in technologie_catalogue.values()),
+                "signals": sum(
+                    1
+                    for value in payload.values()
+                    if value not in (None, "", [], {}, 0)
+                ),
+            }
+            self.capteurs[dimension] = indicators
             reports.append(
                 DimensionReport(
                     name=dimension,
-                    status="actif" if coverage else "veille",
-                    indicators=dict(coverage),
+                    status=str(payload.get("status", "veille")),
+                    indicators=indicators,
                 )
             )
         self.analyseurs = ["analyse_correlation", "analyse_variance"]
@@ -466,20 +476,23 @@ class DetecteurMultidimensionnel:
     def detecter_presences_multidimensionnelles(
         self, technologie_catalogue: Mapping[str, Sequence[str]]
     ) -> Dict[str, Dict[str, int]]:
-        presences: Dict[str, Dict[str, int]] = {}
+        scan = self.detector.last_scan or self.detector.scan_dimensions()
+        matrix = self.detector.to_presence_matrix(scan)
         for dimension in self.dimensions:
-            presences[dimension] = {
-                categorie: len(valeurs) for categorie, valeurs in technologie_catalogue.items()
-            }
-        return presences
+            matrix.setdefault(dimension, {})["technologies"] = sum(
+                len(values) for values in technologie_catalogue.values()
+            )
+        return matrix
 
     def analyser_presences_detectees(
         self, presences: Mapping[str, Mapping[str, int]]
     ) -> Dict[str, str]:
+        threats = self.detector.detect_threats()
+        suffix = " | menaces: " + ", ".join(threats) if threats else " | menaces: aucune"
         return {
             dimension: ", ".join(
                 f"{categorie}: {compte}" for categorie, compte in metrics.items()
-            )
+            ) + suffix
             for dimension, metrics in presences.items()
         }
 

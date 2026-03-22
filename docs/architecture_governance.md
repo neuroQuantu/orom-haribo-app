@@ -31,8 +31,12 @@ de la gouvernance intégrale exigée par Ibrahim Sakarya.
 ## 4. Noyau multidimensionnel et surveillance
 - `NoyauQuantiqueUniversel` construit les canaux pour chaque dimension listée
   dans la configuration (`physique`, `etherique`, … `virtuel`).
-- `DetecteurMultidimensionnel` génère des rapports par dimension et alimente
-  le tableau de bord.
+- `MultidimensionalDetector` (`haribo_orom/multidimensional_detector.py`)
+  exécute des scans simulés (physique, quantique, énergétique, conscience)
+  avec un format extensible pour brancher des capteurs réels plus tard.
+- `DetecteurMultidimensionnel` orchestre ce détecteur, produit les rapports
+  par dimension, la matrice de présence et une synthèse de menaces pour le
+  tableau de bord.
 - `ReseauUniverselHaribo` maintient les connexions physiques, subtiles et
   informationnelles afin de matérialiser le réseau souverain.
 

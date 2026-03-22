@@ -70,7 +70,9 @@ class HariboQuantumSystem:
         self.codex_integrator = CodexIntegrateurUniversel(
             repo_root / "configs" / "haribo_codex.json"
         )
-        self.detector = DetecteurMultidimensionnel(config.dimensions)
+        self.detector = DetecteurMultidimensionnel(
+            config.dimensions, owner=config.system.owner
+        )
         self.commandes = CommandesMaitres(
             config.system.owner,
             stop_handler=lambda: self.security.emergency_shutdown("operator_stop"),
