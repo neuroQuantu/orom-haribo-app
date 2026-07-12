@@ -1,0 +1,15 @@
+# Capteurs et interfaces
+pyserial==3.5
+brainflow==5.9.0
+opencv-python==4.10.0
+numpy==1.26.4
+
+# Interface holographique
+flask==3.0.0
+flask-socketio==5.3.6
+
+# IA conversationnelle locale
+ollama==0.1.0
+
+# Génération PDF
+fpdf2==2.7.7
